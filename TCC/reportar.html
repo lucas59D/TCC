@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Machine Tech - Seleção de Máquina</title>
+    <link rel="stylesheet" href="reportar.css">
+</head>
+<body>
+
+    <div class="container">
+        <div class="sidebar">
+            <div class="logo">
+                <img src="nova logo.png" alt="Machine Tech Logo"> <!-- Coloque a URL da sua logo aqui -->
+            </div>
+            <h1>Machine Tech</h1>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="reportar.html">Reportar Problema</a></li>
+                <li><a href="index.html">Chat com suporte</a></li>
+            </ul>
+        </div>
+
+        <!-- Área principal -->
+        <div class="main-content">
+            <h1>Selecione a Máquina</h1>
+            <div class="machine-grid">
+                <button onclick="selectMachine(1)">1</button>
+                <button onclick="selectMachine(2)">2</button>
+                <button onclick="selectMachine(3)">3</button>
+                <button onclick="selectMachine(4)">4</button>
+                <button onclick="selectMachine(5)">5</button>
+                <button onclick="selectMachine(6)">6</button>
+                <button onclick="selectMachine(7)">7</button>
+                <button onclick="selectMachine(8)">8</button>
+                <button onclick="selectMachine(9)">9</button>
+                <button onclick="selectMachine(10)">10</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Função para redirecionar para a página de problemas
+        function selectMachine(machineNumber) {
+            console.log("Máquina " + machineNumber + " selecionada");
+            // Redireciona para a página problema.html
+            window.location.href = "problema.html";
+        }
+    </script>
+
+</body>
+</html>
+

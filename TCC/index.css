@@ -1,0 +1,134 @@
+/* Definição de estilos básicos */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+/* Estilo da barra lateral */
+.sidebar {
+    background-color: #4c4c4c;
+    width: 250px;
+    padding: 20px;
+    color: white;
+}
+
+.sidebar h1 {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin: 20px 0;
+}
+
+.sidebar ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.sidebar ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Estilo da área principal */
+.main-content {
+    flex: 1;
+    background-color: #e9e9e9;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.header {
+    margin-bottom: 20px;
+}
+
+.novalogo-img {
+    width: auto;
+}
+
+h2 {
+    font-size: 24px;
+    color: #333;
+}
+
+/* Estilo do botão de iniciar */
+button#startButton {
+    padding: 15px 30px; /* Aumentei o padding para tornar o botão mais destacado */
+    font-size: 18px; /* Aumentei o tamanho da fonte para ficar mais visível */
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 50px; /* Arredondei mais o botão para um visual moderno */
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Transição suave no hover */
+}
+
+button#startButton:hover {
+    background-color: #555;
+}
+
+/* Estilos para a janela de chat */
+#chatContainer {
+    width: 100%;
+    max-width: 600px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 20px; /* Arredondei mais o container do chat */
+    padding: 20px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1); /* Aumentei a sombra para destaque */
+}
+
+#chatBody {
+    height: 200px; /* Aumentei a altura do chat para melhor visualização das mensagens */
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    padding: 15px; /* Aumentei o padding para mais espaçamento interno */
+    margin-bottom: 10px;
+    border-radius: 10px; /* Mantive bordas arredondadas no corpo do chat */
+    background-color: #f9f9f9; /* Fundo mais claro para contraste */
+}
+
+/* Estilo da caixa de texto */
+#userInput {
+    width: 75%; /* Ajustei para 75% para equilibrar espaço com o botão */
+    padding: 15px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.1); /* Efeito de sombra interna */
+    background-color: #fff;
+}
+
+/* Estilo do botão de enviar */
+#sendButton {
+    padding: 15px 25px; /* Botão maior e mais espaçoso */
+    font-size: 16px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-left: 10px;
+    transition: background-color 0.3s ease; /* Transição suave no hover */
+}
+
+#sendButton:hover {
+    background-color: #555;
+}

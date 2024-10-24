@@ -1,0 +1,121 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Inteligente - Machine Tech</title>
+    <link rel="stylesheet" href="index.css">
+    <!-- Link para Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar lateral -->
+        <div class="sidebar">
+            <div class="logo">               
+          
+            </div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="reportar.html">Reportar Problema</a></li>
+                <li><a href="index.html">Chat com suporte</a></li>
+            </ul>
+        </div>
+
+        <!-- Conteúdo principal -->
+        <div class="main-content">
+            <div class="header">
+                <img src="nova logo.png" alt="Machine Tech" class="logo-img">
+                <h2>Seja Bem-Vindo ao nosso Chat Inteligente</h2>
+            </div>
+            <button id="startButton">Comece</button>
+
+            <!-- Janela de Chat -->
+            <div id="chatContainer" style="display: none;">
+                <div>
+                    <h3>Suporte Machine Tech</h3>
+                </div>
+                <div id="chatBody">
+                    <!-- Mensagens do chat aparecerão aqui -->
+                </div>
+                <div>
+                    <input type="text" id="userInput" placeholder="Digite sua mensagem..." />
+                    <button id="sendButton">Enviar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("startButton").addEventListener("click", function() {
+            // Exibe a interface do chat quando o botão "Comece" é clicado
+            document.getElementById("chatContainer").style.display = "block";
+            document.querySelector("#startButton").style.display = "none";
+            
+            // Adiciona uma saudação do chatbot
+            addMessage("bot", "Olá! Como posso ajudar você hoje? Estou aqui para ajudar com o que precisar.");
+        });
+
+        document.getElementById("sendButton").addEventListener("click", function() {
+            sendMessage();
+        });
+
+        document.getElementById("userInput").addEventListener("keypress", function(e) {
+            if (e.key === "Enter") {
+                sendMessage();
+            }
+        });
+
+        function sendMessage() {
+            const userInput = document.getElementById("userInput").value;
+            if (userInput.trim() !== "") {
+                addMessage("user", userInput);
+                document.getElementById("userInput").value = ""; // Limpa o campo de texto
+                botResponse(userInput);
+            }
+        }
+
+        function addMessage(sender, text) {
+    const chatBody = document.getElementById("chatBody");
+    const messageDiv = document.createElement("div");
+    messageDiv.classList.add("message", sender);
+
+    const icon = document.createElement("i");
+    icon.classList.add("fas", sender === "user" ? "fa-user" : "fa-robot", "icon");
+
+    const textDiv = document.createElement("div");
+    textDiv.classList.add("text");
+    textDiv.textContent = text;
+
+    messageDiv.appendChild(icon); // Adiciona o ícone
+    messageDiv.appendChild(textDiv); // Adiciona o texto
+
+    chatBody.appendChild(messageDiv);
+    chatBody.scrollTop = chatBody.scrollHeight; // Rola para a última mensagem
+}
+
+
+        function botResponse(userText) {
+            let response;
+            
+            // Simulação de respostas programadas para problemas
+            if (userText.toLowerCase().includes("lubrificação")) {
+                response = "Parece que você está enfrentando um problema com lubrificação. Você já verificou o nível de óleo e a regularidade da lubrificação da máquina?";
+            } else if (userText.toLowerCase().includes("sinal de erro")) {
+                response = "Sinal de erro detectado. Verifique o código de erro específico no painel e veja se há falhas de conexão ou problemas mecânicos.";
+            } else if (userText.toLowerCase().includes("temperatura")) {
+                response = "Temperatura elevada pode ser um problema sério. Já verificou o sistema de resfriamento ou se há ventilação suficiente na área de operação?";
+            } else if (userText.toLowerCase().includes("desempenho")) {
+                response = "Desempenho abaixo do esperado pode ser causado por desgaste de componentes. Verifique as ferramentas de corte e os parâmetros de operação.";
+            } else if (userText.toLowerCase().includes("problema")) {
+                response = "Você pode descrever mais detalhadamente o problema que está enfrentando para que eu possa ajudar melhor?";
+            } else {
+                response = "Desculpe, ainda estou aprendendo. Pode reformular sua pergunta ou especificar mais detalhes sobre lubrificação, sinal de erro, temperatura ou desempenho?";
+            }
+            
+            // Simula um atraso na resposta do bot
+            setTimeout(() => {
+                addMessage("bot", response);
+            }, 1000);
+        }
+    </script>
+</body>
+</html>
